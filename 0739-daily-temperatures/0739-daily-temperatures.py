@@ -1,26 +1,14 @@
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
-        q = deque()
+        stack = []
         n = len(temperatures)
-        ans = []
-        
-        for i in range(n-1,-1,-1):
-            count = 1
-            if not q:
-                ans.append(0)
-
-            else:
-                while q:
-                    if temperatures[i] >= q[0][0]:
-                        x,y = q.popleft()
-                        count += y
-                    else:
-                        break
-                if not q:
-                    ans.append(0)
-                else:
-                    ans.append(count)
-            q.appendleft([temperatures[i],count])
-        ans.reverse()
+        ans = [0] * n
+        for i in range(n):
+            while stack and temperatures[stack[-1]] < temperatures[i]:
+                x = stack.pop()
+                ans[x] = i-x
+            stack.append(i)
         return ans
+    
+        
         
