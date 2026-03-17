@@ -9,7 +9,6 @@ class Solution:
         for val,ind in diff:
             index.append(ind)
 
-
         l = 0
         r = len(costs)-1
         total = 0
