@@ -6,13 +6,12 @@ class Solution:
                 ans.append(curr[:])
                 return 
 
-            if start > n:
-                return
+            for i in range(start,n+1):
+                curr.append(i)
+                helper(i+1,curr)
+                curr.pop()
 
-            curr.append(start)
-            helper(start+1,curr)
-            curr.pop()
-            helper(start+1,curr)
+    
         helper(1,[])
         return ans
         
