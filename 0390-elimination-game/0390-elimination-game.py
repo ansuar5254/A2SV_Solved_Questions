@@ -1,18 +1,17 @@
 class Solution:
     def lastRemaining(self, n: int) -> int:
-        head = 1
-        step = 1
-        remain = n
-        left = True
-        while remain > 1:
-            if left or remain % 2:
+        
+        def helper(head,step,remain,left):
+            if remain == 1:
+                return head
+
+            if left or remain % 2 :
                 head += step
-           
-            
-            remain //= 2
-            step *= 2
-            left = not left
-        return head
+
+            return helper(head,step*2,remain//2,not left)
+
+        return helper(1,1,n,True)
+        
                 
                 
 
