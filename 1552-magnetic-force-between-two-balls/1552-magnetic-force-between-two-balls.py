@@ -16,7 +16,7 @@ class Solution:
                 return False
 
         def binar():
-            low,high = 1,max(position)
+            low,high = 1,max(position)-min(position)
 
             while low <= high:
                 mid = (low + high)//2
