@@ -1,22 +1,35 @@
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
-        num = [0]*(len(nums) + 1)
-        ans  = []
-        for n in nums:
-            num[n] += 1
+        n = len(nums)
+        dup = -1
+        miss = -1
+        
+        for num in nums:
+            num = abs(num)
+            if nums[num-1] <  0:
+                dup = num
+            else:
+                nums[num-1 ] *= -1
 
-        for i in range(1,len(nums)+1):
-            if num[i] > 1:
-                ans.append(i)
-                break
 
 
-        nums = set(nums)
-        for i in range(1,len(num)):
-            if i not in nums:
-                ans.append(i)
-                break
-        return ans
+        for i in range(len(nums)):
+            if nums[i] > 0:
+                miss = i + 1
+
+        return [dup,miss]
+        
+
+        
+                
+        
+
+        
+
+        
+
+
+        
                 
 
         
