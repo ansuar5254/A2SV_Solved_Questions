@@ -3,15 +3,21 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        count = Counter(nums)
-        i = 0
-        arr = [0,1,2]
-        for num in arr:
-            if num in count:
-                for _ in range(count[num]):
-                    nums[i] = num
-                    i += 1
+        l,i,r = 0,0,len(nums)-1
+        while i <= r:
+            if nums[i] == 0:
+                nums[l],nums[i] = nums[i],nums[l]
+                i += 1
+                l += 1
+            elif nums[i] == 2:
+                nums[i],nums[r] = nums[r],nums[i]
+                r -= 1
+            else:
+                i += 1
+
             
+                
+
 
         
 
