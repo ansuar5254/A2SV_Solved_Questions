@@ -7,6 +7,7 @@ class Solution:
 
         visited = [0]*n
         stack = [source]
+        visited[source] = 1
         while stack:
             node = stack.pop()
             if node == destination:
