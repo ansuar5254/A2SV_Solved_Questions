@@ -6,19 +6,19 @@ class Solution:
             graph[v].append(u)
 
         visited = [0]*n
-
-        def dfs(node):
+        stack = [source]
+        while stack:
+            node = stack.pop()
             if node == destination:
                 return True
 
-            visited[node] = 1
+            for neigh in graph[node]:
+                if visited[neigh] == 0: 
+                    stack.append(neigh)
+                    visited[neigh] = 1
+        return False
 
-            for neigh  in graph[node]:
-                if visited[neigh] == 0:
-                    found = dfs(neigh)
-                    if found:
-                        return True
-            return False
-        return dfs(source)
+
+        
         
         
