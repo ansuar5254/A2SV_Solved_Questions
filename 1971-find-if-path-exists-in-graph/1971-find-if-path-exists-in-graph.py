@@ -4,7 +4,7 @@ class Solution:
         for u,v in edges:
             graph[u].append(v)
             graph[v].append(u)
-            
+
         visited = [0]*n
 
         def dfs(node):
@@ -18,10 +18,7 @@ class Solution:
                     found = dfs(neigh)
                     if found:
                         return True
-
-
-        f = dfs(source)
-        if f:
-            return True
-
-        return False
+            return False
+        return dfs(source)
+        
+        
