@@ -11,23 +11,22 @@ class Solution:
     def getImportance(self, employees: List['Employee'], id: int) -> int:
         sub = defaultdict(list)
         imp = defaultdict(int)
-        visited = set()
+      
         for e in employees:
             imp[e.id]= e.importance
             sub[e.id] = e.subordinates
 
-        impo = 0
+
 
         def dfs(node):
-            visited.add(node)
-            nonlocal impo
-            impo += imp[node]
+            total = imp[node]
             for neigh in sub[node]:
-                if neigh not in visited:
-                    dfs(neigh)
+                total += dfs(neigh)
 
-        dfs(id)
-        return impo
+            return total
+
+        return dfs(id)
+    
 
 
 
