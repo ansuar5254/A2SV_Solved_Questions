@@ -13,15 +13,12 @@ class Solution:
         ans = []
        
 
-        # visitd = [0]*numCourses
-        # visited[0] = 1
         while q:
             node = q.popleft()
             ans.append(node)
-            for i in graph[node]:
-                indgree[i] -= 1
-            
+
             for neigh in graph[node]:
+                indgree[neigh] -= 1
                 if indgree[neigh] == 0:
                     q.append(neigh)
         if len(ans) == numCourses:
