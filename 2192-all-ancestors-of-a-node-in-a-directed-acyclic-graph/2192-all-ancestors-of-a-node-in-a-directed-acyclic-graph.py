@@ -1,29 +1,36 @@
 class Solution:
     def getAncestors(self, n: int, edges: List[List[int]]) -> List[List[int]]:
-        graph = [[]*n for _ in range(n)]
+        graph = [[] for _ in range(n)]
+        indgree = [0]*n
         for u,v in edges:
-            graph[v].append(u)
-        
-        ans = [0]*n
-        def dfs(node,temp):
-            stack = [node]
-            visited = [0]*n
-            visited[node] = 1
-            while stack:
-                nod = stack.pop()
-                for neigh in graph[nod]:
-                    if not visited[neigh]:
-                        stack.append(neigh)
-                        visited[neigh] = 1
-                        temp.append(neigh)
+            graph[u].append(v)
+            indgree[v] += 1
 
-            return temp 
+        q = deque()
+        ans = [set() for _ in range(n)]
         for i in range(n):
-            temp = dfs(i,[])
-            temp.sort()
-            ans[i] = temp[::]
+            if indgree[i] == 0:
+                q.append(i)
+              
 
-        return ans
+        while q:
+            node = q.popleft()
+            for neigh in graph[node]:
+                    ans[neigh] |= ans[node]
+                    ans[neigh].add(node)
+                    indgree[neigh] -= 1
+                    if indgree[neigh] == 0:
+                        q.append(neigh)
+
+        return [sorted(list(s)) for s in ans]
+
+
+        
+                    
+
+
+    
+        
         
 
 
