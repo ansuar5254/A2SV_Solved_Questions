@@ -7,11 +7,7 @@ class Solution:
 
         check.sort(reverse = True)
         for val,r in check:
-            temp = []
-            for i in range(len(score[r])):
-                temp.append(score[r][i])
-
-            sort_matrix.append(temp)
+            sort_matrix.append(score[r])
         return sort_matrix
 
 
