@@ -39,18 +39,22 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0463-island-perimeter](https://github.com/ansuar5254/A2SV_Solved_Questions/tree/master/0463-island-perimeter) |
+| [0785-is-graph-bipartite](https://github.com/ansuar5254/A2SV_Solved_Questions/tree/master/0785-is-graph-bipartite) |
 | [1971-find-if-path-exists-in-graph](https://github.com/ansuar5254/A2SV_Solved_Questions/tree/master/1971-find-if-path-exists-in-graph) |
 ## Breadth-First Search
 |  |
 | ------- |
 | [0463-island-perimeter](https://github.com/ansuar5254/A2SV_Solved_Questions/tree/master/0463-island-perimeter) |
+| [0785-is-graph-bipartite](https://github.com/ansuar5254/A2SV_Solved_Questions/tree/master/0785-is-graph-bipartite) |
 | [1971-find-if-path-exists-in-graph](https://github.com/ansuar5254/A2SV_Solved_Questions/tree/master/1971-find-if-path-exists-in-graph) |
 ## Union-Find
 |  |
 | ------- |
+| [0785-is-graph-bipartite](https://github.com/ansuar5254/A2SV_Solved_Questions/tree/master/0785-is-graph-bipartite) |
 | [1971-find-if-path-exists-in-graph](https://github.com/ansuar5254/A2SV_Solved_Questions/tree/master/1971-find-if-path-exists-in-graph) |
 ## Graph Theory
 |  |
 | ------- |
+| [0785-is-graph-bipartite](https://github.com/ansuar5254/A2SV_Solved_Questions/tree/master/0785-is-graph-bipartite) |
 | [1971-find-if-path-exists-in-graph](https://github.com/ansuar5254/A2SV_Solved_Questions/tree/master/1971-find-if-path-exists-in-graph) |
 <!---LeetCode Topics End-->
